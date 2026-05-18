@@ -3,9 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StudyMind - AI Study Companion</title>
+    <title>LearnMate - AI Study Companion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    
+    <!-- Authentication Screen -->
+     <div class="auth-screen" id="auth-screen">
+        <div class="auth-bg">
+            <div class="auth-orb auth-orb-1"></div>
+            <div class="auth-orb auth-orb-2"></div>
+            <div class="auth-orb auth-orb-3"></div>
+        </div>
+
+        <div class="auth-card">
+            <div class="auth-brand">
+                <div class="auth-logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <path d="M16 2L28 9V23L16 30L4 23V9L16 2Z" stroke="var(--amber)" stroke-width="1.5" fill="none" />
+                        <path d="M16 8L22 11.5V18.5L16 22L10 18.5V11.5L16 8Z" fill="var(--amber)" opacity="0.3" />
+                        <circle cx="16" cy="15" r="2.5" fill="var(--amber)" />
+                    </svg>
+                </div>
+                <span class="auth-brand-name">LearnMate</span>
+            </div>
+            <p class="auth-tagline">Your AI-powered study companion</p>
+
+            <div class="auth-tabs">
+                <button class="auth-tab active" id="tab-login" onclick="switchTab('login')">Sign In</button>
+                <button class="auth-tab" id="tab-login" onclick="switchTab('signup')">Sign Up</button>
+            </div>
+
+            <div id="form-login" class="auth-form active">
+                <div class="field-group">
+                    <label class="field-label">Username</label>
+                    <input type="text" class="field-input" id="login-username" placeholder="your username" autocomplete="username">
+                </div>
+                <div class="field-group">
+                    <label class="field-label">Password</label>
+                    <input type="password" class="field-input" id="login-password" placeholder="your username" autocomplete="username">
+                </div>
+                <div class="auth-error" id="login-error"></div>
+                <button class="btn-primary" onclick="handleLogin()">Sign In →</button>
+                <p class="auth-demo-hint">Demo: <code>demo</code> / <code>demo123</code></p>
+            </div>
+
+            <div id="form-signup" class="auth-form">
+                <div class="field-group">
+                    <label class="field-label">Full Name</label>
+                    <input type="text" id="signup-name" class="field-input" placeholder="Your name"> 
+                </div>
+                <div class="field-group">
+                    <label class="field-label">Username</label>
+                    <input type="text" id="signup-name" class="field-input" placeholder="Your name"> 
+                </div>
+                <div class="field-group">
+                    <label class="field-label">Password</label>
+                    <input type="text" id="signup-name" class="field-input" placeholder="Your name"> 
+                </div>
+                <div class="auth-error" id="signup-error"></div>
+                <div class="auth-success" id="signup-success"></div>
+                <button class="btn-primary" onClick="handleSignup()">Create Account</button>
+            </div>
+        </div>
+     </div>
 </body>
 </html>
