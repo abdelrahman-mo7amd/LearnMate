@@ -106,6 +106,24 @@
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><polyline points="12 6 12 12 16 14"/></svg>
           Focus Timer
         </button>
+        
+        <button class="sidebar-item" onclick="setMode('quiz')">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            Quiz Mode
+        </button>
+        <button class="sidebar-item" onclick="setMode('notes')">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            Notes
+        </button>
+        <button class="sidebar-item" onclick="setMode('summarizer')">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="21" y1="10" x2="7" y2="10"/><line x1="21" y1="6" x2="3" y2="6"/><line x1="21" y1="14" x2="3" y2="14"/><line x1="21" y1="18" x2="7" y2="18"/></svg>
+            Summarizer
+        </button>
+        <button class="sidebar-item" onclick="setMode('progrss')">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            Progress
+        </button>
+
       </div>
 
       <div class="sidebar-section">
@@ -243,6 +261,53 @@
         </div>
       </div>
 
+      <div class="view" id="view-notes">
+        <div class="chat-header">
+          <div>
+            <h1 class="chat-title">Study Notes</h1>
+            <p class="chat-subtitle">Saved to your browser · persist across sessions</p>
+          </div>
+
+          <div class="chat-header-action">
+            <button class="icon-btn" onclick="Notes.clearAll()" title="Delete all notes">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="tool-body">
+          <div class="tool-card">
+            <label class="field-label">New Note</label>
+            <textarea name="" id="note-input" class="field-input" rows="3" placeholder="Write your study note here... (Ctrl+Enter to save)"></textarea>
+            <div class="note-form-row">
+              <div class="field-group" style="flex:1;margin-bottom:0">
+                <select id="note-tage-select" class="field-input">
+                  <option>General</option>
+                  <option>Summary</option>
+                  <option>Formula</option>
+                  <option>Definiton</option>
+                  <option>Question</option>
+                  <option>Important</option>
+                </select>
+              </div>
+
+              <div class="note-colors">
+                <button class="note-color-btn" data-color="#e8a840" style="background: #e8a840" title="Amber"></button>
+                <button class="note-color-btn" data-color="#34d399" style="background:#34d399" title="Green"></button>
+                <button class="note-color-btn" data-color="#60a5fa" style="background:#60a5fa" title="Blue"></button>
+                <button class="note-color-btn" data-color="#f472b6" style="background:#f472b6" title="Pink"></button>
+              </div>
+              <button class="btn-sm" onclick="Notes.addNote()">Save Note</button>
+            </div>
+          </div>
+
+          <div class="notes-empty" id="notes-empty">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.3"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <p>No notes yet. Write your first one above!</p>
+          </div>
+          <div id="notes-list" class="notes-list"></div>
+        </div>
+      </div>
     </main>
   </div>
 
@@ -251,5 +316,6 @@
   <script src="js/chat.js"></script>
   <script src="js/flashcards.js"></script>
   <script src="js/timer.js"></script>
+  <script src="js/notes.js"></script>
 </body>
 </html>
