@@ -7,7 +7,11 @@ It helps students learn faster by providing explanations, flashcards, study tool
 The project uses the **Groq API** with **LLaMA 3.3 70B** to answer questions and support learning.
 
 ---
+## AI declaration 
 
+the overall idea was from AI, also the design. AI Teached me how to use other API to fetch data also
+
+---
 # Features
 
 ## AI Tutor
